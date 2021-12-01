@@ -1,0 +1,22 @@
+// px2rem function converts px value to rem value
+// @returns {String} value in rems with unit attached
+// @param {Number} $base - base value equal to 1rem
+// @param {Number} $pxValue - value in px to convert
+@function px2rem($base, $pxValue) {
+  $value: $pxValue / $base;
+  @return #{$value}rem;
+}
+// Generating .font-{$name} classes based on $fonts map
+// @requires $fonts
+@each $fontName, $fontFamily in $fonts {
+  .font-#{$fontName} {
+    font-family: $fontFamily;
+  }
+}
+// Generating .font-size-{$size} classes based on $font-sizes map
+// @requires $font-sizes
+@each $size in $font-sizes {
+  .font-size-#{$size} {
+    font-size: px2rem(16, $size);
+  }
+}

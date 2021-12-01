@@ -1,0 +1,41 @@
+// Mixin for generating equal width nad height dimensions
+// @param {String} $size
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+// Function to extract font family from map
+// @param {String} $font - font name
+// @requires $fonts
+@function get-font($font) {
+  @return map-get($fonts, $font);
+}
+// Function to extract color variant from map
+// @param {String} $color - color name
+// @requires $colors
+@function get-color($color) {
+  @return map-get($colors, $color);
+}
+
+// Function to extract breakpoint from map
+// @param {String} $breakpoint - breakpoint name
+// @requires $breakpoints
+@function get-breakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+// Mixin for specifying font sizes in different breakpoints (currently 3)
+// @param {Value+Unit} $small - font size for small screens
+// @param {Value+Unit} $medium - font size for medium screens
+// @param {Value+Unit} $large - font size for large screens
+// @requires get-breakpoint function
+@mixin font-size($small, $medium, $large) {
+  font-size: $small;
+  @media (min-width: get-breakpoint(medium)) {
+    font-size: $medium;
+  }
+  @media (min-width: get-breakpoint(large)) {
+    font-size: $large;
+  }
+}

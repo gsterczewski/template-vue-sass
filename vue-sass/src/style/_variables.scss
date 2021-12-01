@@ -1,0 +1,23 @@
+$breakpoints: (
+  "medium": 650px,
+  "large": 1200px,
+);
+$fonts: (
+  "primary": (
+    Barlow Condensed,
+    sans-serif,
+  ),
+  "secondary": (
+    Bellefair,
+    serif,
+  ),
+);
+
+$colors: (
+  "primary": hsl(0, 100%, 100%),
+  "accent": hsl(231, 77%, 90%),
+  "dark": hsl(230, 35%, 7%),
+  "gray": rgba(255, 255, 255, 0.25),
+);
+
+$font-sizes: (14, 15, 16, 18, 20, 24, 28, 32, 40, 56, 80, 100, 150);
